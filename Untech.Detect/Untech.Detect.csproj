@@ -64,6 +64,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Processor\CannyStage.cs" />
+    <Compile Include="Processor\CloneStage.cs" />
+    <Compile Include="Processor\ContrastStage.cs" />
+    <Compile Include="Processor\DetectionStage.cs" />
+    <Compile Include="Processor\IPostProcessingStage.cs" />
+    <Compile Include="Processor\IProcessingStage.cs" />
+    <Compile Include="Processor\MaskStage.cs" />
+    <Compile Include="Processor\PosterizationStage.cs" />
+    <Compile Include="Processor\VideoStreamProcessor.cs" />
+    <Compile Include="Processor\SplitChannelsStage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleFinder.cs" />
