@@ -32,15 +32,14 @@ namespace Untech.Detect.Processor
             {
                 var oldPreImage = preImage;
                 preImage = stage.PreProcess(preImage);
-                if (oldPreImage != preImage)
+                if (oldPreImage != preImage && oldPreImage != image)
                 {
                     oldPreImage.Dispose();
                 }
             }
 
             PreProcessedWindow.ShowImage(preImage);
-            preImage.Dispose();
-
+            
             var postImage = image;
             foreach (var stage in PostProcessingStages)
             {
@@ -53,6 +52,7 @@ namespace Untech.Detect.Processor
             }
 
             PostProcessedWindow.ShowImage(postImage);
+            preImage.Dispose();
             postImage.Dispose();
         }
 

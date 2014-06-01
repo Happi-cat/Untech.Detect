@@ -64,10 +64,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Processor\BGRContrastStage.cs" />
+    <Compile Include="Processor\BlurStage.cs" />
     <Compile Include="Processor\CannyStage.cs" />
     <Compile Include="Processor\CloneStage.cs" />
-    <Compile Include="Processor\ContrastStage.cs" />
+    <Compile Include="Processor\GrayContrastStage.cs" />
     <Compile Include="Processor\DetectionStage.cs" />
+    <Compile Include="Processor\Helpers\BitDepthHelper.cs" />
+    <Compile Include="Processor\HistogramContrastStage.cs" />
     <Compile Include="Processor\IPostProcessingStage.cs" />
     <Compile Include="Processor\IProcessingStage.cs" />
     <Compile Include="Processor\MaskStage.cs" />
