@@ -16,9 +16,13 @@ namespace Untech.Detect.Processor
                 {
                     var cvLineSegmentPoint = seq.GetSeqElem<CvLineSegmentPoint>(i);
                     if (cvLineSegmentPoint != null)
+                    {
                         lines.Add(cvLineSegmentPoint.Value);
+                        postProcessedImage.DrawLine(cvLineSegmentPoint.Value.P1, cvLineSegmentPoint.Value.P2, CvColor.Green, 3, LineType.AntiAlias);
+                    }
                 }
 
+                /* Filtered lines
                 var groupedLines = RectangleFinder.GroupSegments(lines);
 
                 var rects = RectangleFinder.Convert(groupedLines);
@@ -28,6 +32,7 @@ namespace Untech.Detect.Processor
                 {
                     postProcessedImage.Rectangle(cvRect, CvColor.Red, 3, LineType.AntiAlias);
                 }
+                */
 
                 //for (int i = 0; i < groupedLines.Count; i++)
                 //{
@@ -44,15 +49,15 @@ namespace Untech.Detect.Processor
 
                 //Console.WriteLine(groupedLines.Count);
 
-                //CvSeq<CvCircleSegment> seq1 = preProcessedImage.HoughCircles(storage,
-                //                                                  HoughCirclesMethod.Gradient, 1,
-                //    //imgGray.Size.Height / 8, 150, 55, 0, 50);
-                //                                                  15, 100, 30, 9, 51);
+				CvSeq<CvCircleSegment> seq1 = preProcessedImage.HoughCircles(storage,
+																  HoughCirclesMethod.Gradient, 1,
+					//imgGray.Size.Height / 8, 150, 55, 0, 50);
+																  15, 100, 30, 9, 51);
 
-                //foreach (CvCircleSegment item in seq1)
-                //{
-                //    postProcessedImage.Circle(item.Center, (int)item.Radius, CvColor.Red, 3);
-                //}
+				foreach (CvCircleSegment item in seq1)
+				{
+					postProcessedImage.Circle(item.Center, (int)item.Radius, CvColor.Red, 3);
+				}
             }
             return postProcessedImage;
         }

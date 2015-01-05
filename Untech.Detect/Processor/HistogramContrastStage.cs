@@ -43,11 +43,12 @@ namespace Untech.Detect.Processor
             Debug.Print("[HISTO] Alpha: {0}", alpha);
             Debug.Print("[HISTO] Beta: {0}", beta);
 
-            var scaledImage = new IplImage(image.Size, image.Depth, image.NChannels);
-            image.ConvertScale(scaledImage, alpha, beta);
+            //var scaledImage = new IplImage(image.Size, image.Depth, image.NChannels);
+            //image.ConvertScale(scaledImage, alpha, beta);
 
 
-            return scaledImage;
+            //return scaledImage;
+	        return image;
         }
     }
 }

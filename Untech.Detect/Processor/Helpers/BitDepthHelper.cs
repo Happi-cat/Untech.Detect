@@ -13,7 +13,7 @@ namespace Untech.Detect.Processor.Helpers
                     return 8;
 
                 case BitDepth.U16:
-                case BitDepth.S16:
+                case BitDepth.S16: 
                     return 16;
 
                 case BitDepth.S32:
